@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <h3>Hello {{ order.customer.name }}</h3>
+    <h4>Do you really want to delete your {{ order.product.name }} order?</h4>
+    <a href="{% url 'home' %}" class="btn btn-secondary btn-sm">Cancel</a>
+    <a href="{% url 'delete' order.id %}" class="btn btn-danger btn-sm">Delete</a> 
+{% endblock content %}
