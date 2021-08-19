@@ -179,9 +179,10 @@ def register(request):
         if form.is_valid():
             user = form.save()
             username = form.cleaned_data.get('username')
-            group = Group.objects.get(name='customer')
-            user.groups.add(group)
-            Customer.objects.create(user=user)
+            # group = Group.objects.get(name='customer')
+            # user.groups.add(group)
+            # Customer.objects.create(
+            #     user=user, name=user.username, email=user.email)
             messages.success(request, f"Account Created for {username}")
             return redirect('login')
     context = {
